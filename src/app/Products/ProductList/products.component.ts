@@ -7,6 +7,7 @@ import { List} from "../../../repository/productlist"
   styleUrls: ['./products.component.css']
 })
 export class ProductListComponent {
+  searchText : string =''
   title = 'task-1';
   products = List 
 }
