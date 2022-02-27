@@ -1,6 +1,22 @@
-<input type="text"  [(ngModel)]="searchText" >
-
-
+<!-- <input type="text"   >
+<select name="SearchType"[(ngModel)]=choice id="cars">
+  <option value="id" [ngValue]="1">Id </option>
+  <option value="productName" [ngValue]="0" >product Name</option>
+  <option value="productCode" [ngValue]="2" >product Code</option>
+</select> -->
+<br/>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+  <input type="text" class="form-control" [(ngModel)]="searchText" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <select class="form-select" [(ngModel)]=choice aria-label="Default select example">
+    
+    <option selected value="1" [ngValue]="1">product Name</option>
+    <option value="2" [ngValue]="2" >product ID</option>
+    <option value="3" [ngValue]="3" >product Code</option>
+  </select>
+  
+</div>
+<h3>Select the dropdown to change the search category</h3>&nbsp;
 <div>
     
     <table class="table table-dark table-striped">
@@ -16,7 +32,7 @@
         
       </tr>
       
-        <tr *ngFor="let element of products | searchFilter : searchText "  >
+        <tr *ngFor="let element of products | searchFilter : searchText :choice "  >
           <td><img style="width: 60px;" src="{{element.imageUrl}} "></td> 
           <td>{{element.productId}}</td> 
           <td>{{element.productName}}</td>
