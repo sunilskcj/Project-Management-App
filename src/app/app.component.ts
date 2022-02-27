@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { List} from "../repository/productlist"
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Project-Management-App';
+  title = 'task-1';
+  products = List 
 }
